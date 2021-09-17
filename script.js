@@ -8,12 +8,25 @@ const personalMovieDB = {
   private: false,
 };
 
-const a = prompt("En aqirgi korgen kino?"),
-  b = prompt("Neshege bahalaysiz?"),
-  c = prompt("En aqirgi korgen kino?"),
-  d = prompt("Neshege bahalaysiz?");
+for (let i = 0; i < 2; i++) {
+  const a = prompt("En aqirgi korgen kino?"),
+    b = prompt("Neshege bahalaysiz?");
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+  if (a != null && b != null && a != "" && b != "" && a.length < 20) {
+    personalMovieDB.movies[a] = b;
+    console.log("Done");
+  } else {
+    console.log("Error");
+    i--;
+  }
+}
+
+if (personalMovieDB.count < 10) {
+  alert("Az kino koripsiz");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+  alert("Siz jaqsi korermen ekensiz");
+} else if (personalMovieDB.count >= 30) {
+  alert("Kinoman");
+} else alert("Qatelik");
 
 console.log(personalMovieDB);
