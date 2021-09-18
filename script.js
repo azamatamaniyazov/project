@@ -65,3 +65,29 @@ function showMyDB(hidden) {
 }
 
 showMyDB(personalMovieDB.private);
+
+const month = {
+  december: 31,
+  january: 31,
+  february: 28,
+
+  march: 31,
+  april: 30,
+  may: 31,
+
+  june: 30,
+  july: 31,
+  august: 31,
+
+  september: 30,
+  october: 31,
+  nobember: 30,
+};
+
+for (let key in month) {
+  if (month[key] === 30) {
+    console.log(`${key} 30 kunnen pitedi`);
+  } else if (box === 31) {
+    console.log(`${key} 31 kunnen pitedi`);
+  } else console.log(`${key} 28 kun`);
+}
