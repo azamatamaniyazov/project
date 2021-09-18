@@ -1,4 +1,16 @@
-const numberOfFilms = +prompt("Сколько фильмов посмотрели?", "");
+"use strict";
+
+let numberOfFilms;
+
+function showFirstQ() {
+  for (let i = 0; i < 1; i++) {
+    numberOfFilms = +prompt("Сколько фильмов посмотрели?", "");
+    if (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)) {
+      i--;
+    }
+  }
+}
+showFirstQ();
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -29,4 +41,10 @@ if (personalMovieDB.count < 10) {
   alert("Kinoman");
 } else alert("Qatelik");
 
-console.log(personalMovieDB);
+function showMyDB(x) {
+  if (x == false) {
+    console.log(personalMovieDB);
+  } else console.log("Data base private");
+}
+
+showMyDB(personalMovieDB.private);
